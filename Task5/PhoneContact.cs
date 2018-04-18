@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task5
 {
-    class PhoneContact:Contact,IContact,IComparable,ICloneable
+    class PhoneContact:Contact,IComparable,ICloneable
     {
         private int phone { get; set; }
 

@@ -25,9 +25,9 @@ namespace Task5
         {
             return String.Compare(con1.name, con2.name);
         }
-        public static void printArray(Contact[] arr)
+        public static void printArray(List<Contact> arr)
         {
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Count; i++)
             {
                 arr[i].Print();
             }
@@ -38,13 +38,15 @@ namespace Task5
             arr[0] = new MailContact("andrew", "andrgmailcom");
             arr[1] = new MailContact("bodya", "bodgmailcom");
             arr[2] = new MailContact("marian", "mariangmailcom");
-            arr[3] = new PhoneContact("lox", 234002340);
-            arr[4] = new PhoneContact("debil", 324823487);
-            showInformationByName("debil", arr);
-            showInformationByName("daun", arr);
+            arr[3] = new PhoneContact("vasyl", 234002340);
+            arr[4] = new PhoneContact("oleg", 324823487);
+            showInformationByName("marian", arr);
+            showInformationByName("petro", arr);
+
+            var sortedArray = arr.OrderBy(x => x.name).ToList();
 
             Array.Sort(arr,ContactComparator);
-            printArray(arr);
+            printArray(sortedArray);
             Console.Read();
         }
     }
