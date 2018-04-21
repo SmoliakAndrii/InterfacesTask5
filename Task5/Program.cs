@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task5
 {
-    class Program
+    public class Program
     {
         public static void showInformationByName(string Name,Contact[]arr)
         {

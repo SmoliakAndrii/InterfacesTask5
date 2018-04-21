@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task5
 {
-    public abstract class Contact:IContact
+    abstract class Contact:IContact
     {
         public string name { get; set; }
         public abstract void Input();

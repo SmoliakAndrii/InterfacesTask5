@@ -6,43 +6,43 @@ using System.Threading.Tasks;
 
 namespace Task5
 {
-    public class MailContact : Contact, IComparable, ICloneable
+    class PhoneContact:Contact,IComparable,ICloneable
     {
-        private string mail { get; set; }
+        private int phone { get; set; }
 
-        public MailContact() { }
-        public MailContact(string _name, string _mail)
+        public PhoneContact() { }
+        public PhoneContact(string _name,int _phone)
         {
             name = _name;
-            mail = _mail;
+            phone = _phone;
         }
         public object Clone()
         {
-            return new MailContact(this.name, this.mail);
+            return new PhoneContact(this.name, this.phone);
         }
 
         public override void Input()
         {
             Console.WriteLine("Enter name:");
             name = Console.ReadLine();
-            Console.WriteLine("Enter mail:");
-            mail = Console.ReadLine();
+            Console.WriteLine("Enter phone:");
+            phone = Int32.Parse(Console.ReadLine());
         }
         public override void Print()
         {
-            Console.WriteLine("Name:{0} , Mail:{1}", name, mail);
+            Console.WriteLine("Name:{0} , Phone:{1}",name,phone);
         }
 
         public int CompareTo(object obj)
         {
-            MailContact comp = obj as MailContact;
+            PhoneContact comp = obj as PhoneContact;
             if (comp != null)
             {
-                return string.Compare(mail, comp.mail);
+                return this.phone.CompareTo(comp.phone);
             }
             else
             {
-                throw new ArgumentException("Not a mail contact.");
+                throw new ArgumentException("Not a phone contact.");
             }
         }
     }

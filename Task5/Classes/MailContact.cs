@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task5
 {
-    public class MailContact : Contact, IComparable, ICloneable
+    class MailContact : Contact, IComparable, ICloneable
     {
         private string mail { get; set; }
 

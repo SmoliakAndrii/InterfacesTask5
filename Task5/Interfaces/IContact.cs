@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task5
 {
-    public interface IContact
+    interface IContact
     {
         void Print();
         void Input();
