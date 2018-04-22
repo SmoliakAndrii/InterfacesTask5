@@ -8,7 +8,7 @@ namespace Task5
 {
     public class MailContact : Contact, IComparable, ICloneable
     {
-        private string mail { get; set; }
+        private string mail;
 
         public MailContact() { }
         public MailContact(string _name, string _mail)

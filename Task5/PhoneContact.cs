@@ -8,7 +8,7 @@ namespace Task5
 {
     public class PhoneContact:Contact,IComparable,ICloneable
     {
-        private int phone { get; set; }
+        private int phone;
 
         public PhoneContact() { }
         public PhoneContact(string _name,int _phone)
@@ -23,10 +23,17 @@ namespace Task5
 
         public override void Input()
         {
-            Console.WriteLine("Enter name:");
-            name = Console.ReadLine();
-            Console.WriteLine("Enter phone:");
-            phone = Int32.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter name:");
+                name = Console.ReadLine();
+                Console.WriteLine("Enter phone:");
+                phone = Int32.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                throw new FormatException();
+            }
         }
         public override void Print()
         {
